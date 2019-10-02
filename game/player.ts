@@ -57,7 +57,6 @@ export class Player extends GameObj {
         this.updateCamera();
 
         this.staticSolids = staticSolids;
-        //TODO collision on x, y, z
 
         this.aabb = new AABB(
             addVector3(this.position, 
@@ -204,11 +203,9 @@ export class Player extends GameObj {
         }
 
         if (this.keyHandler.isPressed('ArrowLeft') || this.keyHandler.isPressed('a')) {
-            this.velocity.x -= this.moveAccel;
             dVX -= this.moveAccel;
         }
         else if (this.keyHandler.isPressed('ArrowRight') || this.keyHandler.isPressed('d')) {
-            this.velocity.x += this.moveAccel;
             dVX += this.moveAccel;
         }
         else {
@@ -230,8 +227,6 @@ export class Player extends GameObj {
         let moveVector = new Vector3(dVX, 0, dVZ).applyQuaternion(this.cameraQuaternion);
         this.velocity.x += moveVector.x;
         this.velocity.z += moveVector.z;
-        // this.velocity.x += dVX;
-        // this.velocity.z += dVZ;
 
         this.velocity.y -= this.gravity;
 
