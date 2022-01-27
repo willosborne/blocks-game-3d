@@ -12,7 +12,7 @@
     "hotkeys-js": "^3.7.1",
     "ramda": "^0.26.1",
     "stats.js": "^0.17.0",
-    "three": "^0.108.0",
+    "three": "^0.137.0",
     "typescript": "^3.6.3"
   },
   "devDependencies": {
